@@ -1,0 +1,231 @@
+/* ric sans */
+
+.email-signature {
+    max-width: 1000px;
+    margin: auto auto;
+    margin-top: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.email-block-one::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.email-signature h2 {
+    padding: 20px 10px 0px 40px;
+}
+
+.email-sig-padding {
+    padding: 40px;
+    padding-right: 13px;
+}
+
+.email-block-one .email-signature-inputs {
+    float: left;
+    width: 56%;
+}
+
+.email-block-one .email-signature-output {
+    display: block;
+    float: left;
+    width: 40%;
+    min-width: 400px;
+    background-color: #eeeeee;
+    margin-right: 40px;
+    border-radius: 10px;
+}
+
+.email-signature-instructions {
+    width: 100%;
+}
+
+
+/* Input styles */
+
+.sig-diabled {
+    display: none;
+}
+
+.sig-diabled * {
+    color: gray;
+    cursor: not-allowed;
+}
+
+.email-signature .button-box {
+    display: inline-block;
+    margin: auto auto;
+    min-width: 400px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.email-signature button {
+    padding: 10px 30px;
+}
+
+.email-sig-50 {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.email-sig-50::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.email-sig-50 .email-sig-input-group {
+    float: left;
+    width: 50%;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+.email-sig-50.sig-group {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90%;
+    margin: 10px;
+}
+
+.email-sig-50 .email-sig-input-group input {
+    width: 85%;
+}
+
+.email-sig-50 .email-sig-input-group select {
+    width: 93%;
+}
+
+.email-sig-50 .email-sig-input-group {
+    margin-bottom: 10px;
+}
+
+.email-sig-input-group {
+    margin-bottom: 30px;
+}
+
+.email-sig-input-group.sig-tight {
+    margin-bottom: 30px;
+}
+
+.email-sig-50.sig-group {
+    margin-bottom: 30px;
+}
+
+.email-sig-input-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.email-sig-input-group input,
+.email-sig-input-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    width: 92%;
+}
+
+.email-sig-input-group input[type="checkbox"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    float: left;
+    width: auto;
+    margin: 2px 14px 0px 4px;
+    transform: scale(1.5);
+}
+
+.error-message {
+    color: #cc0033;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.email-sig-input-group input:invalid:not(:placeholder-shown) {
+    border-color: #cc0033;
+}
+
+.email-sig-input-group input:invalid:not(:placeholder-shown)~.error-message {
+    border: 2px solid red;
+    display: block;
+}
+
+
+/* Screen is < 1030px so section into one column */
+
+@media screen and (max-width: 1030px) {
+    .email-block-one .email-signature-inputs {
+        float: none;
+        width: 100%;
+    }
+    .email-block-one .email-signature-output {
+        display: block;
+        float: none;
+        min-width: 400px;
+        margin: auto auto;
+    }
+    .email-signature .button-box {
+        width: 100%;
+    }
+}
+
+
+/* Screen is < 768px so force all into one column */
+
+@media screen and (max-width: 768px) {
+    .email-block-one .email-signature-inputs {
+        width: 100%;
+    }
+    .email-block-one .email-signature-output {
+        margin: auto auto;
+    }
+    .email-sig-50 {
+        margin-bottom: 0px;
+    }
+    .email-sig-50 .email-sig-input-group {
+        width: 100%;
+    }
+    .email-sig-input-group input,
+    .email-sig-50 .email-sig-input-group input {
+        width: 95%;
+    }
+    .email-sig-input-group select,
+    .email-sig-50 .email-sig-input-group select {
+        width: 99%;
+    }
+}
+
+
+/* Screen is < 500 px, so tighten all padding */
+
+@media screen and (max-width: 500px) {
+    .email-sig-padding {
+        padding: 20px 10px;
+    }
+}
+
+
+/* pills */
+
+.email-signature .pill {
+    background-color: #e9e9e9;
+    border: none;
+    color: blue;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    border: 1px solid black;
+}
