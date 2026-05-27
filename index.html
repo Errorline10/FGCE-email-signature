@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Create FGCU Email Signature</title>
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
@@ -17,7 +17,9 @@
 
 <body>
 
-  <form id="email-sig" name="email-sig">
+<div id="FGCUEmailSignature">
+
+  <form id="email-sig" name="email-sig" novalidate>
 
     <div class="email-signature">
       <h2>Create an Official FGCU Email Signature</h2>
@@ -46,10 +48,10 @@
               </div>
             </div>
 
-            <!-- I am an FGCU alumni ( Optional ) -->
+            <!-- I am an FGCU alumnus/alumna (optional) -->
             <div class="email-sig-input-group sig-tight">
-              <input type="checkbox" id="alumni" name="alumni" placeholder="I am an FGCU alumni ( Optional )">
-              <label for="alumni">I am an FGCU alumni ( Optional )</label>
+              <input type="checkbox" id="alumni" name="alumni" placeholder="I am an FGCU alumnus/alumna (optional)">
+              <label for="alumni">I am an FGCU alumnus/alumna (optional)</label>
 
               <div class="email-sig-50 sig-group sig-diabled">
                 <!-- Degree -->
@@ -209,7 +211,7 @@
                 <span class="sig-prefix">http://www.fgcu.edu/</span>
                 <span class="sig-checkmark">&#10004;</span>
                 <input type="text" id="department-url" name="department-url" class="input-field" required
-                  placeholder="yourdepartmentwebsite">
+                  placeholder="yourDepartmentWebsite">
                 <span class="sig-checkmark">&#10004;</span>
               </div>
               <span class="error-message">This field is required.</span>
@@ -221,13 +223,13 @@
               <input type="tel" id="phone" inputmode="numeric" maxlength="12" name="phone" required
                 placeholder="239.000.0000" pattern="[0-9]{3}.[0-9]{3}.[0-9]{4}">
               <span class="sig-checkmark">&#10004;</span>
-              <span class="error-message">Phone number is requiered</span>
+              <span class="error-message">Phone number is required</span>
             </div>
 
             <!-- I would like to add a link (Optional) -->
             <div class="email-sig-input-group sig-tight">
               <input type="checkbox" id="opt-link-checkbox" name="opt-link-checkbox" placeholder="Add an optional Link">
-              <label for="opt-link-checkbox">I would like to add a link (Optional)</label>
+              <label for="opt-link-checkbox">I would like to add a link (optional)</label>
 
               <div class="email-sig-50 sig-group sig-diabled">
                 <!-- Link Text - optional -->
@@ -239,7 +241,7 @@
 
                 <!-- Link URL - optional -->
                 <div class="email-sig-input-group">
-                  <label for="Calendly">link URL</label>
+                  <label for="Calendly">Link URL</label>
                   <input type="text" id="opt-link-url" name="opt-link-url" placeholder="//URL">
                   <span class="error-message"></span>
                 </div>
@@ -279,8 +281,8 @@
           <h3>Instructions</h3>
 
           <div id="pill-group" class="pill-group">
-            <p>Compleat the form above. Click the "Copy to clipboard" button and then</p>
-            <p>Select your operating system for specific instructions.</p>
+            <p>Complete the form above. Click the "Copy to clipboard" button and then</p>
+            <p>select your operating system for specific instructions.</p>
             <br />
             <input type="radio" id="pill1" name="pill-options" value="opt1" checked>
             <label for="pill1">Windows</label>
@@ -301,50 +303,77 @@
 
 
         <div id="email-sig-windows">
-          <h4>Windows: How to paist your custom signature block into Microsoft Outlook.</h4>
+          <h4>Windows: How to paste your custom signature block into Microsoft Outlook.</h4>
           <UL>
             <li><span>Open Outlook and Click on the "<strong>File</strong>" menu. (On the top tool bar).</span>
               <img src="/images/instructions/windows/sig-email-instructions-windows-1.png">
             </li>
-            <li><Span>On the bottom left; Click "<strong>Options</strong>"</Span>
+            <li><Span>On the bottom left, click "<strong>Options</strong>"</Span>
               <img src="/images/instructions/windows/sig-email-instructions-windows-2.png">
             </li>
             <li>
-              <Span>Within the Options modal window; Select "<strong>Mail</strong>" on the left side.</Span>
-              <Span>Then Click the "Signatures" Button on the right.</Span>
+              <Span>In the Options window, Select "<strong>Mail</strong>" on the left side.</Span>
+              <Span>Then click the "Signatures" button on the right.</Span>
               <img src="/images/instructions/windows/sig-email-instructions-windows-3.png">
             </li>
             <li>
-              <span>Within the Signatures modal; Click "New" on the right.</span>
+              <span>In the Signatures window, click "New" on the right.</span>
               <img src="/images/instructions/windows/sig-email-instructions-windows-4.png">
             </li>
-            <li><Span>Name the new Signature "FGCU-Signature" and click "OK"</Span>
+            <li><Span>Name the new signature "FGCU-Signature" and click "OK"</Span>
               <img src="/images/instructions/windows/sig-email-instructions-windows-5.png">
             </li>
-            <li><Span>Paist in the signature block from above, and click the "Save" Button.</Span>
+            <li><Span>Paste in the signature block from above, and click the "Save" Button.</Span>
               <img src="/images/instructions/windows/sig-email-instructions-windows-6.png">
             </li>
             <li>
-              <span>Congratulations you now have an official FGCU email signature block.</span>
+              <span>Congratulations! You now have an official FGCU email signature.</span>
             </li>
           </UL>
         </div>
 
-        <div id="email-sig-mac">
+        <div id="email-sig-mac" class="sig-hidden">
           Mac Instructions
         </div>
 
-        <div id="email-sig-web">
-          Web mail Instructions
+        <div id="email-sig-web" class="sig-hidden">
+
+          <div id="email-sig-windows">
+            <h4>Web Mail: How to paste your custom signature block into Microsoft Outlook Web Mail.</h4>
+            <UL>
+              <li>
+                <span>Use this Link to open Outlook WebMail in a new Tab.</span>
+                <span><a
+                    href="https://outlook.cloud.microsoft/mail/options/accounts-category/signatures-subcategory"
+                    target="_blank"
+                    >WebMail.FGCU.edu</a></span>
+                <img src="/images/instructions/web/sig-email-instructions-web-1.png"></li>
+                </span>
+              </li>
+              <li>
+                <span>Click "+Add signature"</span>
+                <span>Fill in the Name as "FGC-Signature"</span>
+                <span>Paste the signature into the box and click save.</span>
+
+                <span><a
+                    href="https://outlook.cloud.microsoft/mail/options/accounts-category/signatures-subcategory"
+                    target="_blank"
+                    >WebMail.FGCU.edu</a></span>
+                <img src="/images/instructions/web/sig-email-instructions-web-2.png">
+              </li>
+
+              <li>
+                <span>Congratulations! You now have an official FGCU email signature.</span>
+              </li>
+  
+            </UL>
+          </div>
         </div>
-
       </div>
-
-
-
-
     </div>
   </form>
+
+</div>
 
 </body>
 

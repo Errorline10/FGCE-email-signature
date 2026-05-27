@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "rig-sans";
+    src: url(https://use.typekit.net/af/110857/0000000…/30/l?primer=7cdcb44…&fvd=n9&v=3) format("woff2"), url(https://use.typekit.net/af/110857/0000000…/30/d?primer=7cdcb44…&fvd=n9&v=3) format("woff"), url(https://use.typekit.net/af/110857/0000000…/30/a?primer=7cdcb44…&fvd=n9&v=3) format("opentype");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 900;
+    font-stretch: normal;
+}
+
+
 html {
     /* Ensures smooth snapping to prevent jarring scroll jumps */
     scroll-behavior: smooth;
@@ -6,7 +16,7 @@ html {
 /* ric sans */
 
 .email-signature * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'rig-sans', Arial, Helvetica, sans-serif;
 }
 
 .email-signature {
