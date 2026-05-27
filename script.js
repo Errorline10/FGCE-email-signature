@@ -1,5 +1,3 @@
-
-
 var EmailSigModule = (function () {
 
   // 
@@ -90,16 +88,24 @@ var EmailSigModule = (function () {
   // _______________________________________/ CopyDivToClipboard \____________ 
 
   async function CopyDivToClipboard() {
-    const divText = document.getElementById("email-signature-code").outerHTML;
+    const richTextDiv = document.getElementById("email-signature-code");
     try {
-      await navigator.clipboard.writeText(divText);
+      const clipboardItem = new ClipboardItem({
+        "text/plain": new Blob(
+          [richTextDiv.innerText], {
+            type: "text/plain"
+          }
+        ),
+        "text/html": new Blob([richTextDiv.outerHTML], {
+          type: "text/html"
+        }),
+      });
+      await navigator.clipboard.write([clipboardItem]);
       document.getElementById("sig-clipboard-success").classList.remove("sig-diabled");
     } catch (err) {
-      alert("Failed to copy!", err);
+      console.error("Failed to copy HTML: ", err);
     }
   }
-
-
 
   //                                                _____________
   // ______________________________________________/ PopulateSig \____________ 
