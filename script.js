@@ -82,6 +82,46 @@ var EmailSigModule = (function () {
       let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
       e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + (x[3] ? '.' + x[3] : '')
     });
+
+
+
+    let instructionsButtons = document.getElementById('pill-group');
+
+    instructionsButtons.addEventListener('click', (e) => {
+      console.log('Click!!')
+
+
+      let pill1 = document.getElementById('pill1');
+      let pill2 = document.getElementById('pill2');
+      let pill3 = document.getElementById('pill3');
+
+      let win = document.getElementById('email-sig-windows');
+      let mac = document.getElementById('email-sig-mac');
+      let web = document.getElementById('email-sig-web');
+
+      pill1.addEventListener('input', (e) => {
+        console.log('pill1')
+        win.classList.remove('sig-hidden')
+        mac.classList.add('sig-hidden')
+        web.classList.add('sig-hidden')
+      });
+
+      pill2.addEventListener('input', (e) => {
+        console.log('pill2')
+        win.classList.add('sig-hidden')
+        mac.classList.remove('sig-hidden')
+        web.classList.add('sig-hidden')
+      });
+
+      pill3.addEventListener('input', (e) => {
+        console.log('pill3')
+        win.classList.add('sig-hidden')
+        mac.classList.add('sig-hidden')
+        web.classList.remove('sig-hidden')
+      });
+
+    });
+
   }
 
   //                                         ____________________

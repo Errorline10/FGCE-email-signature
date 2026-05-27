@@ -271,18 +271,77 @@
 
 
       <!-- Instructions -->
-      <h3>Instructions</h3>
-      <div class="email-signature-instructions">
-        <div class="email-sig-padding">
-          <hr />
-          <button class="pill">Windows</button>
-          <button class="pill">Mac</button>
-          <button class="pill">Web Mail</button>
 
-          <h3>Select Instructions for your operating system below</h3>
+
+      <div class="email-sig-instructions">
+
+        <div class="email-sig-instructions-header">
+          <h3>Instructions</h3>
+
+          <div id="pill-group" class="pill-group">
+            <p>Compleat the form above. Click the "Copy to clipboard" button and then</p>
+            <p>Select your operating system for specific instructions.</p>
+            <br />
+            <input type="radio" id="pill1" name="pill-options" value="opt1" checked>
+            <label for="pill1">Windows</label>
+
+            <input type="radio" id="pill2" name="pill-options" value="opt2">
+            <label for="pill2">Mac</label>
+
+            <input type="radio" id="pill3" name="pill-options" value="opt3">
+            <label for="pill3">Web Mail</label>
+          </div>
+
+          <hr />
 
         </div>
+
+
+
+
+
+        <div id="email-sig-windows">
+          <h4>Windows: How to paist your custom signature block into Microsoft Outlook.</h4>
+          <UL>
+            <li><span>Open Outlook and Click on the "<strong>File</strong>" menu. (On the top tool bar).</span>
+              <img src="/images/instructions/windows/sig-email-instructions-windows-1.png">
+            </li>
+            <li><Span>On the bottom left; Click "<strong>Options</strong>"</Span>
+              <img src="/images/instructions/windows/sig-email-instructions-windows-2.png">
+            </li>
+            <li>
+              <Span>Within the Options modal window; Select "<strong>Mail</strong>" on the left side.</Span>
+              <Span>Then Click the "Signatures" Button on the right.</Span>
+              <img src="/images/instructions/windows/sig-email-instructions-windows-3.png">
+            </li>
+            <li>
+              <span>Within the Signatures modal; Click "New" on the right.</span>
+              <img src="/images/instructions/windows/sig-email-instructions-windows-4.png">
+            </li>
+            <li><Span>Name the new Signature "FGCU-Signature" and click "OK"</Span>
+              <img src="/images/instructions/windows/sig-email-instructions-windows-5.png">
+            </li>
+            <li><Span>Paist in the signature block from above, and click the "Save" Button.</Span>
+              <img src="/images/instructions/windows/sig-email-instructions-windows-6.png">
+            </li>
+            <li>
+              <span>Congratulations you now have an official FGCU email signature block.</span>
+            </li>
+          </UL>
+        </div>
+
+        <div id="email-sig-mac">
+          Mac Instructions
+        </div>
+
+        <div id="email-sig-web">
+          Web mail Instructions
+        </div>
+
       </div>
+
+
+
 
     </div>
   </form>
