@@ -2,7 +2,9 @@ import loadFormData from './loadFormData.js';
 import liveUpdateTemplate from './liveUpdateTemplate.js';
 import copyToClipboard from './copyToClipboard.js';
 import instructions from './instructions.js';
-import genorateInputSelect from './genorateInputSelect.js';
+
+import createDropDownDegrees from './createDropDownDegrees.js';
+import createDropDownYears from './createDropDownYears.js';
 
 const generateHtmlForm = (formData, defaultValues) => {
     const id = formData.get().id;
@@ -47,72 +49,7 @@ const generateHtmlForm = (formData, defaultValues) => {
                   <!-- Degree -->
                   <div class="sig-input-group">
                     <label for="${id}-degree">Degree</label>
-                    <select id="${id}-degree">
-                      <option value="">None</option>
-                      <optgroup label="Specialist Degrees">
-                        <option value="Ed.S.">Educational Specialist (Ed.S.)</option>
-                        <option value="B.Acc.">Bachelor of Accountancy (B.Acc.)</option>
-                      </optgroup>
-                      <optgroup label="Associate Degrees">
-                        <option value="A.A.">Associate of Arts (A.A.)</option>
-                        <option value="A.A.S.">Associate of Applied Science (A.A.S.)</option>
-                        <option value="A.A.T.">Associate of Arts in Teaching (A.A.T.)</option>
-                        <option value="A.B.S.">Associate of Baccalaureate Studies (A.B.S.)</option>
-                        <option value="A.E.S.">Associate of Engineering Science (A.E.S.)</option>
-                        <option value="A.F.A.">Associate of Fine Arts (A.F.A.)</option>
-                        <option value="A.G.S.">Associate in General Studies (A.G.S.)</option>
-                        <option value="A.S.">Associate of Science (A.S.)</option>
-                      </optgroup>
-                      <optgroup label="Bachelor's Degrees">
-                        <option value="B.A.">Bachelor of Arts (B.A.)</option>
-                        <option value="B.B.A.">Bachelor of Business Administration (B.B.A.)</option>
-                        <option value="B.C.L.">Bachelor of Civil Law (B.C.L.)</option>
-                        <option value="B.Comm.">Bachelor of Commerce (B.Comm.)</option>
-                        <option value="B.E.">Bachelor of Engineering (B.E.)</option>
-                        <option value="B.F.A.">Bachelor of Fine Arts (B.F.A.)</option>
-                        <option value="L.L.B.">Bachelor of Laws (L.L.B.)</option>
-                        <option value="B.M.">Bachelor of Music (B.M.)</option>
-                        <option value="B.S.">Bachelor of Science (B.S.)</option>
-                      </optgroup>
-                      <optgroup label="Master's Degrees">
-                        <option value="LL.M.">Master of Laws (LL.M.)</option>
-                        <option value="M.A.">Master of Arts (M.A.)</option>
-                        <option value="M.B.A.">Master of Business Administration (M.B.A.)</option>
-                        <option value="M.Div.">Master of Divinity (M.Div.)</option>
-                        <option value="M.Ed.">Master of Education (M.Ed.)</option>
-                        <option value="M.F.A.">Master of Fine Arts (M.F.A.)</option>
-                        <option value="M.P.A.">Master of Public Administration (M.P.A.)</option>
-                        <option value="M.P.A.">Master of Public Affairs (M.P.A.)</option>
-                        <option value="M.P.M.">Master of Project Management (M.P.M.)</option>
-                        <option value="M.P.P.">Master of Public Policy (M.P.P.)</option>
-                        <option value="M.R.E.">Master of Religious Education (M.R.E.)</option>
-                        <option value="M.S.">Master of Science (M.S.)</option>
-                        <option value="M.T.S.">Master of Theological Studies (M.T.S.)</option>
-                      </optgroup>
-                      <optgroup label="Doctoral Degrees">
-                        <option value="D.A.">Doctor of Arts (D.A.)</option>
-                        <option value="D.B.A.">Doctor of Business Administration (D.B.A.)</option>
-                        <option value="D.C.L.">Doctor of Civil Law (D.C.L.)</option>
-                        <option value="D.D.">Doctor of Divinity (D.D.)</option>
-                        <option value="D.Lit">Doctor of Literature or Doctor of Letters (D.Lit. or
-                          D. Litt.)</option>
-                        <option value="D.M.A.">Doctor of Musical Arts (D.M.A.)</option>
-                        <option value="D. Mus.">Doctor of Music (D. Mus.)</option>
-                        <option value="D.N.S.">Doctorate of Nursing Science (D.N.S.)</option>
-                        <option value="D. Phil.">Doctor of Philosophy (D. Phil.)</option>
-                        <option value="D.Sc.">Doctor of Science (D.Sc.)</option>
-                        <option value="Ed.D.">Doctor of Education (Ed.D.)</option>
-                        <option value="Eng.D.">Doctor of Engineering (Eng.D.)</option>
-                        <option value="J.D.">Doctor of Law or Juris Doctor (J.D.)</option>
-                        <option value="Pharm.D.">Doctor of Pharmacy (Pharm.D.)</option>
-                        <option value="Ph.D.">Doctor of Philosophy (Ph.D.)</option>
-                        <option value="Psy.D.">Doctor of Psychology (Psy.D.)</option>
-                        <option value="Th.D.">Doctor of Theology (Th.D.)</option>
-                      </optgroup>
-                      <optgroup label="Other">
-                        <option value="other">Other</option>
-                      </optgroup>
-                    </select>
+                        ${createDropDownDegrees(formData)}
                     <span class="sig-checkmark">&#10004;</span>
                     <span class="error-message">This field is required.</span>
                   </div>
@@ -120,7 +57,7 @@ const generateHtmlForm = (formData, defaultValues) => {
                   <!-- Graduation Year -->
                   <div class="sig-input-group">
                     <label for="${id}-graduation_year">Graduation Year</label>
-                        ${genorateInputSelect(formData)}
+                        ${createDropDownYears(formData)}
                     <span class="sig-checkmark">&#10004;</span>
                     <span class="error-message">This field is required.</span>
                   </div>
@@ -195,7 +132,6 @@ const generateHtmlForm = (formData, defaultValues) => {
           </div>
 
 
-
           <!-- Output - the Signature Block -->
           <div class="email-signature-output">
             <div id="${id}-email-signature-code" class="email-signature-code">
@@ -210,15 +146,11 @@ const generateHtmlForm = (formData, defaultValues) => {
             <div id="${id}-sig-clipboard-success" class="sig-clipboard-success sig-diabled">✔&nbsp;&nbsp;Email signature has been copied to your
               clipboard!</div>
           </div>
-
         </div>
 
 
         <!-- Instructions -->
-
-
         <div class="sig-instructions">
-
           <div class="sig-instructions-header">
             <h3>Instructions</h3>
 
@@ -234,14 +166,14 @@ const generateHtmlForm = (formData, defaultValues) => {
 
               <input type="radio" id="${id}-pill2" name="pill-options" value="opt2">
               <label for="${id}-pill2">Mac</label>
-
             </div>
-
             <hr />
 
-
-        ${instructions(formData)}
+            ${instructions(formData)}
+  
+          </div>
         </div>
+      </div>
     </form>
     
     `;

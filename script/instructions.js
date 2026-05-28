@@ -56,7 +56,7 @@ return `
     </li>
     <li>
       <span>Click "+Add signature"</span>
-      <span>Fill in the Name as "FGC-Signature"</span>
+      <span>Fill in the Name as "FGCU-Signature"</span>
       <span>Paste the signature into the box and click save.</span>
 
       <img alt="Paste the signature" src="/images/instructions/web/sig-email-instructions-web-2.png">

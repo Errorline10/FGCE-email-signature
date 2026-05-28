@@ -2,6 +2,11 @@ import generateHtmlForm from './generateHtmlForm.js';
 
 const EmailSignatureApp = () => {
 
+  // this is the master form data Object; there are getter and setter
+  // functions, because we pass the data around to many different scopes.
+  // if you use formData.set(key,value) and formData.get()
+  // they will run in the same scope of the data object.
+
   let formData = {
     'id': '',
     'fullName': 'John Jane Doe ',
