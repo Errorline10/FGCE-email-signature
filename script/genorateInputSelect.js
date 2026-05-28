@@ -1,6 +1,8 @@
-const genorateInputSelect = () => {
+const genorateInputSelect = (formData) => {
+    const id = formData.get().id;
+
     return `
-<select name="graduation_year" id="graduation_year">
+<select name="${id}-graduation_year" id="${id}-graduation_year">
 <option value="">- NA -</option>
 <option value="15">2015</option>
 <option value="14">2014</option>

@@ -7,84 +7,76 @@
     font-stretch: normal;
 }
 
-
-html {
-    /* Ensures smooth snapping to prevent jarring scroll jumps */
-    scroll-behavior: smooth;
-}
-
-/* ric sans */
-
-.email-signature * {
+.fsgu-email-sig * {
     font-family: 'rig-sans', Arial, Helvetica, sans-serif;
 }
 
-.email-signature {
+.fsgu-email-sig {
     max-width: 1000px;
     margin: auto auto;
     margin-top: 40px;
-    border: 1px solid black;
     border-radius: 10px;
 }
 
-.email-block-one::after {
+.fsgu-email-sig .fsgu-sig::after {
     content: "";
     display: table;
     clear: both;
 }
 
-.email-signature h2 {
+.fsgu-email-sig h2 {
     padding: 20px 10px 0px 40px;
 }
 
-.email-signature h3 {
+.fsgu-email-sig h3 {
     font-size: 30px;
     padding: 0px;
     margin: 0px;
 }
 
-.email-signature h4 {
+.fsgu-email-sig h4 {
     font-size: 20px;
     padding: 0px;
     margin: 10px 0px 60px 0px;
 }
 
-
-.email-signature hr {
+.fsgu-email-sig hr {
     margin-bottom: 40px;
+    margin-left: 40px;
 }
 
-.email-sig-padding {
+.fsgu-email-sig .sig-padding {
     padding: 0px 40px 13px 40px;
 }
 
-.email-signature-code {
+.fsgu-email-sig .email-signature-code {
     padding: 30px;
     padding-right: 13px;
 
 }
 
-.email-block-one .email-signature-inputs {
+.fsgu-email-sig .email-signature-inputs {
     float: left;
-    width: 56%;
+    width: 55%;
 }
 
-.email-block-one .email-signature-output {
+.fsgu-email-sig .email-signature-output {
     display: block;
     float: left;
     width: 40%;
     min-width: 400px;
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
     margin-right: 40px;
     border-radius: 10px;
+    border: 1px solid black;
 }
 
 
 
-/* Input styles */
+/* Form Input field styles */
+/* ____________________________________ */
 
-
-.email-signature .button-box {
+.fsgu-email-sig .button-box {
     display: inline-block;
     margin: auto auto;
     min-width: 400px;
@@ -92,38 +84,37 @@ html {
     margin-top: 20px;
 }
 
-.email-signature button {
+.fsgu-email-sig button {
     padding: 10px 30px;
 }
 
-.sig-clipboard-success {
+.fsgu-email-sig .sig-clipboard-success {
     margin: 20px auto;
     color: green;
     border: 1px solid green;
     border-radius: 10px;
     padding: 10px;
-    /* max-width: 300px; */
 }
 
-.email-sig-50 {
+.fsgu-email-sig .sig-50 {
     width: 100%;
     margin-bottom: 10px;
 }
 
-.email-sig-50::after {
+.fsgu-email-sig .sig-50::after {
     content: "";
     display: table;
     clear: both;
 }
 
-.email-sig-50 .email-sig-input-group {
+.fsgu-email-sig .sig-50 .sig-input-group {
     float: left;
     width: 50%;
     padding-right: 0px;
     margin-right: 0px;
 }
 
-.email-sig-50.sig-group {
+.fsgu-email-sig .sig-50.sig-group {
     border: 1px solid gray;
     border-radius: 10px;
     padding: 10px;
@@ -132,39 +123,35 @@ html {
     margin-bottom: 25px;
 }
 
-.email-sig-50 .email-sig-input-group input {
+.fsgu-email-sig .sig-50 .sig-input-group input {
     width: 85%;
 }
 
-
-
-
-.email-sig-50 .email-sig-input-group select {
+.fsgu-email-sig .sig-50 .sig-input-group select {
     width: 93%;
 }
 
-.email-sig-50 .email-sig-input-group {
+.fsgu-email-sig .sig-50 .sig-input-group {
     margin-bottom: 10px;
 }
 
-.email-sig-input-group {
+.fsgu-email-sig .sig-input-group {
     margin-bottom: 20px;
 }
 
-.email-sig-input-group.sig-tight {
+.fsgu-email-sig .sig-input-group.sig-tight {
     margin-bottom: 20px;
 }
 
-
-.email-sig-input-group label {
+.fsgu-email-sig .sig-input-group label {
     display: block;
     font-weight: bold;
     font-size: 16px;
     padding-bottom: 5px;
 }
 
-.email-sig-input-group input,
-.email-sig-input-group select {
+.fsgu-email-sig .sig-input-group input,
+.fsgu-email-sig .sig-input-group select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -172,21 +159,21 @@ html {
     width: 92%;
 }
 
-.sig-prefix-group {
+.fsgu-email-sig .sig-prefix-group {
     position: relative;
 }
 
-.sig-prefix-group input {
+.fsgu-email-sig .sig-prefix-group input {
     padding-left: 160px;
     width: calc(94% - 160px);
     max-width: 41vw;
 }
 
-.sig-prefix-group .sig-checkmark {
+.fsgu-email-sig .sig-prefix-group .sig-checkmark {
     top: 7px;
 }
 
-.sig-prefix {
+.fsgu-email-sig .sig-prefix {
     color: #000000;
     padding-right: 5px;
     user-select: none;
@@ -200,7 +187,7 @@ html {
 }
 
 
-.email-sig-input-group input[type="checkbox"] {
+.fsgu-email-sig .sig-input-group input[type="checkbox"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -211,77 +198,69 @@ html {
     transform: scale(1.5);
 }
 
-
-
 /* Screen is < 1030px so section into one column */
-
 @media screen and (max-width: 1030px) {
-    .email-block-one .email-signature-inputs {
+    .fsgu-email-sig .email-signature-inputs {
         float: none;
         width: 100%;
     }
 
-    .email-block-one .email-signature-output {
+    .fsgu-email-sig .email-signature-output {
         display: block;
         float: none;
         min-width: 324px;
         margin: auto auto;
     }
 
-    .email-signature .button-box {
+    .fsgu-email-sig .button-box {
         width: 100%;
     }
 }
 
 
 /* Screen is < 768px so force all into one column */
-
 @media screen and (max-width: 768px) {
-    .email-block-one .email-signature-inputs {
+    .fsgu-email-sig .email-signature-inputs {
         width: 100%;
     }
 
-    .email-block-one .email-signature-output {
+    .fsgu-email-sig .email-signature-output {
         margin: auto auto;
     }
 
-    .email-sig-50 {
+    .fsgu-email-sig .sig-50 {
         margin-bottom: 0px;
     }
 
-    .email-sig-50 .email-sig-input-group {
+    .fsgu-email-sig .sig-50 .sig-input-group {
         width: 100%;
     }
 
-    .email-sig-input-group input,
-    .email-sig-50 .email-sig-input-group input {
+    .fsgu-email-sig .sig-input-group input,
+    .fsgu-email-sig .sig-50 .sig-input-group input {
         width: 95%;
     }
 
-    .email-sig-input-group select,
-    .email-sig-50 .email-sig-input-group select {
+    .fsgu-email-sig .sig-input-group select,
+    .fsgu-email-sig .sig-50 .sig-input-group select {
         width: 99%;
     }
 }
 
-
 /* Screen is < 500 px, so tighten all padding */
-
 @media screen and (max-width: 500px) {
-    .email-sig-padding {
+    .fsgu-email-sig .sig-padding {
         padding: 20px 10px;
     }
 }
 
 
-
 /* Green Checkmarks */
-
-.email-sig-input-group {
+.fsgu-email-sig .sig-input-group {
     position: relative;
 }
 
-.sig-checkmark {
+.fsgu-email-sig .sig-checkmark {
     position: absolute;
     color: green;
     display: none;
@@ -289,14 +268,14 @@ html {
     right: 20px;
 }
 
-input:valid+.sig-checkmark {
+.fsgu-email-sig input:valid+.sig-checkmark {
     display: block;
 }
 
 
 
 /* error messages */
-.error-message {
+.fsgu-email-sig .error-message {
     color: #cc0033;
     font-size: 12px;
     margin-top: 5px;
@@ -310,17 +289,15 @@ input:user-invalid~.error-message {
 
 
 /* toggle the Alumni and optional link sections */
-
-.sig-diabled {
+.fsgu-email-sig .sig-diabled {
     overflow: hidden;
     max-height: 0px;
     opacity: 0;
     transition: max-height 1s ease, opacity 1s;
 }
 
-
-.alumni:checked~.sig-diabled,
-.opt-link-checkbox:checked~.sig-diabled {
+.fsgu-email-sig .alumni:checked~.sig-diabled,
+.fsgu-email-sig .opt-link-checkbox:checked~.sig-diabled {
     overflow: auto;
     max-height: 300px;
     opacity: 1;
@@ -328,19 +305,10 @@ input:user-invalid~.error-message {
 }
 
 
-input:user-valid+#sig-submit {
-    color: green;
-}
+/* Instructions Section */
+/* ____________________________________ */
 
-input:user-invalid+#sig-submit {
-    color: red;
-}
-
-
-
-
-/* Instructions */
-.email-sig-instructions {
+.sig-instructions {
     border-top: 1px solid black;
     margin: 0px;
     background-color: rgb(252, 252, 255);
@@ -348,90 +316,79 @@ input:user-invalid+#sig-submit {
     min-height: 1000px;
 }
 
-.email-sig-instructions ul li span {
+.sig-instructions ul li span {
     width: 100%;
     display: block;
     padding-bottom: 5px;
 }
 
-.email-sig-instructions ul {
+.sig-instructions ul {
     list-style-type: decimal;
     margin: auto auto;
 }
 
-.email-sig-instructions ul li::marker {
+.sig-instructions ul li::marker {
     font-size: 30px;
     color: blue;
 }
 
-.email-sig-instructions ul li {
+.sig-instructions ul li {
     font-size: 20px;
     padding-bottom: 60px;
 }
 
 
-.email-sig-instructions ul li img {
+.sig-instructions ul li img {
     width: 80%;
     margin-left: 10%;
     border: 1px solid black;
     border-radius: 20px;
     box-shadow: 20px 20px 20px rgb(173, 173, 173);
     margin-top: 20px;
-
 }
 
-
-
-.email-sig-instructions-header {
+.sig-instructions-header {
     width: 100%;
 }
 
-
-
-/* Pills */
-.pill-group {
+/* Select Instrauction :: Pills */
+.sig-instructions .pill-group {
     margin: 0px 0px 50px 0px;
 }
 
-.pill-group p {
-    padding: 10px 0px 0px 0px ;
+.sig-instructions .pill-group p {
+    padding: 10px 0px 0px 0px;
     margin: 0px;
     width: 100%;
 }
 
-.pill-group input[type="radio"] {
+.sig-instructions .pill-group input[type="radio"] {
     display: none;
-    /* Hide the native radio button */
 }
 
-.pill-group label {
+.sig-instructions .pill-group label {
     display: inline-block;
     padding: 8px 20px;
     margin: 5px;
     border: 2px solid #ccc;
     border-radius: 50px;
-    /* Large radius creates the pill shape */
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: sans-serif;
 }
 
-/* Selected state styling */
-.pill-group input[type="radio"]:checked+label {
-    background-color: #007bff;
+.sig-instructions .pill-group input[type="radio"]:checked+label {
+    background-color: #002f61;
     color: white;
-    border-color: #007bff;
+    border-color: #000000;
 }
 
-/* Optional: Hover effect */
-.pill-group label:hover {
+.sig-instructions .pill-group label:hover {
     background-color: #f0f0f0;
 }
 
-
-
 /* show hide the instructions */
 /* look in the JS for the show hide code */
-.sig-hidden{
+.sig-instructions .sig-hidden {
     display: none;
 }

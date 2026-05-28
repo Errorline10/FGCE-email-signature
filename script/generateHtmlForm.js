@@ -11,17 +11,17 @@ const generateHtmlForm = (formData, defaultValues) => {
     
     <form id="${id}-email-sig" name="${id}-email-sig" novalidate>
 
-      <div class="email-signature">
+      <div class="fsgu-email-sig">
         <h2>Create an Official FGCU Email Signature</h2>
         <hr />
 
-        <div class="email-block-one">
+        <div class="fsgu-sig">
           <div class="email-signature-inputs">
-            <div class="email-sig-padding">
-              <div class="email-sig-50">
+            <div class="sig-padding">
+              <div class="sig-50">
 
                 <!-- Full Name-->
-                <div class="email-sig-input-group">
+                <div class="sig-input-group">
                   <label for="${id}-fullName">* Full Name</label>
                   <input type="text" id="${id}-fullName" name="fullName" required placeholder="John Jane Doe">
                   <span class="sig-checkmark">&#10004;</span>
@@ -29,7 +29,7 @@ const generateHtmlForm = (formData, defaultValues) => {
                 </div>
 
                 <!-- Title or Position -->
-                <div class="email-sig-input-group">
+                <div class="sig-input-group">
                   <label for="${id}-title-or-position">* Title or Position</label>
                   <input type="text" id="${id}-title-or-position" name="title-or-position" required
                     placeholder="Title or Position">
@@ -39,13 +39,13 @@ const generateHtmlForm = (formData, defaultValues) => {
               </div>
 
               <!-- I am an FGCU alumnus/alumna (optional) -->
-              <div class="email-sig-input-group sig-tight">
+              <div class="sig-input-group sig-tight">
                 <input type="checkbox" id="${id}-alumni" class="alumni" name="alumni" placeholder="I am an FGCU alumnus/alumna (optional)">
                 <label for="${id}-alumni">I am an FGCU alumnus/alumna (optional)</label>
 
-                <div class="email-sig-50 sig-group sig-diabled">
+                <div class="sig-50 sig-group sig-diabled">
                   <!-- Degree -->
-                  <div class="email-sig-input-group">
+                  <div class="sig-input-group">
                     <label for="${id}-degree">Degree</label>
                     <select id="${id}-degree">
                       <option value="">None</option>
@@ -118,9 +118,9 @@ const generateHtmlForm = (formData, defaultValues) => {
                   </div>
 
                   <!-- Graduation Year -->
-                  <div class="email-sig-input-group">
+                  <div class="sig-input-group">
                     <label for="${id}-graduation_year">Graduation Year</label>
-                        ${genorateInputSelect()}
+                        ${genorateInputSelect(formData)}
                     <span class="sig-checkmark">&#10004;</span>
                     <span class="error-message">This field is required.</span>
                   </div>
@@ -128,8 +128,8 @@ const generateHtmlForm = (formData, defaultValues) => {
               </div>
 
               <!-- College, Division or Unit -->
-              <div class="email-sig-50">
-                <div class="email-sig-input-group">
+              <div class="sig-50">
+                <div class="sig-input-group">
                   <label for="${id}-division">* College, Division or Unit</label>
                   <input type="text" id="${id}-division" name="division" required placeholder="College, Division or Unit">
                   <span class="sig-checkmark">&#10004;</span>
@@ -137,7 +137,7 @@ const generateHtmlForm = (formData, defaultValues) => {
                 </div>
 
                 <!-- Department or Office -->
-                <div class="email-sig-input-group">
+                <div class="sig-input-group">
                   <label for="${id}-department">* Department or Office</label>
                   <input type="text" id="${id}-department" name="department" required placeholder="Department or Office">
                   <span class="sig-checkmark">&#10004;</span>
@@ -146,7 +146,7 @@ const generateHtmlForm = (formData, defaultValues) => {
               </div>
 
               <!-- Your Department website URL -->
-              <div class="email-sig-input-group">
+              <div class="sig-input-group">
                 <label for="${id}-department-url">* Your Department website URL</label>
                 <div class="sig-prefix-group">
                   <span class="sig-prefix">http://www.fgcu.edu/</span>
@@ -159,7 +159,7 @@ const generateHtmlForm = (formData, defaultValues) => {
               </div>
 
               <!-- Phone Number -->
-              <div class="email-sig-input-group">
+              <div class="sig-input-group">
                 <label for="${id}-phone">Phone Number</label>
                 <input type="tel" id="${id}-phone" inputmode="numeric" maxlength="12" name="phone" required
                   placeholder="239.000.0000" pattern="[0-9]{3}.[0-9]{3}.[0-9]{4}">
@@ -168,21 +168,21 @@ const generateHtmlForm = (formData, defaultValues) => {
               </div>
 
               <!-- I would like to add a link (Optional) -->
-              <div class="email-sig-input-group sig-tight">
+              <div class="sig-input-group sig-tight">
                 <input type="checkbox" id="${id}-opt-link-checkbox" class="opt-link-checkbox" name="opt-link-checkbox"
                   placeholder="Add an optional Link">
                 <label for="${id}-opt-link-checkbox">I would like to add a link (optional)</label>
 
-                <div class="email-sig-50 sig-group sig-diabled">
+                <div class="sig-50 sig-group sig-diabled">
                   <!-- Link Text - optional -->
-                  <div class="email-sig-input-group">
+                  <div class="sig-input-group">
                     <label for="${id}-opt-link-text">Link Text</label>
                     <input type="text" id="${id}-opt-link-text" name="opt-link-text" placeholder="optional link text">
                     <span class="error-message"></span>
                   </div>
 
                   <!-- Link URL - optional -->
-                  <div class="email-sig-input-group">
+                  <div class="sig-input-group">
                     <label for="${id}-Calendly">Link URL</label>
                     <input type="text" id="${id}-opt-link-url" name="opt-link-url" placeholder="//URL">
                     <span class="error-message"></span>
@@ -217,9 +217,9 @@ const generateHtmlForm = (formData, defaultValues) => {
         <!-- Instructions -->
 
 
-        <div class="email-sig-instructions">
+        <div class="sig-instructions">
 
-          <div class="email-sig-instructions-header">
+          <div class="sig-instructions-header">
             <h3>Instructions</h3>
 
             <div id="${id}-pill-group" class="pill-group">
@@ -239,9 +239,9 @@ const generateHtmlForm = (formData, defaultValues) => {
 
             <hr />
 
-        </div>
 
         ${instructions(formData)}
+        </div>
     </form>
     
     `;
@@ -282,9 +282,9 @@ const generateHtmlForm = (formData, defaultValues) => {
         let pill2 = document.getElementById(id+'-pill2');
         let pill3 = document.getElementById(id+'-pill3');
 
-        let win = document.getElementById(id+'-email-sig-win');
-        let mac = document.getElementById(id+'-email-sig-mac');
-        let web = document.getElementById(id+'-email-sig-web');
+        let win = document.getElementById(id+'-sig-win');
+        let mac = document.getElementById(id+'-sig-mac');
+        let web = document.getElementById(id+'-sig-web');
 
 
         console.log(pill1)

@@ -24,8 +24,8 @@ document.getElementById(id+'-email-signature-code').innerHTML = `
     <a href="https://www.fgcu.edu" style="color:#0072ce; text-decoration:none;">fgcu.edu</a>
   </td></tr>
   <tr><td style="padding:0 0 6px 0;">
-    <a href="${formData["opt-link-url"]}" style="color:#0072ce; text-decoration:none;">${formData["opt-link-text"]}</a>
-  </td></tr>
+    ${(formData["opt-link-text"] && formData["opt-link-url"]) ? `<a href="${formData["opt-link-url"]}" style="color:#0072ce; text-decoration:none;">${formData["opt-link-text"]}</a>` : ''}
+    </td></tr>
   <tr><td style="padding:0;"><table cellpadding="0" cellspacing="0" border="0">
     <tr><td style="padding-right:5px;">
       <a href="https://www.facebook.com/FloridaGulfCoastUniversity/">
