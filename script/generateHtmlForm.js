@@ -1,6 +1,6 @@
 import loadFormData from './loadFormData.js';
 import liveUpdateTemplate from './liveUpdateTemplate.js';
-import copyToClipboard from './copyToClipboard.js';
+import copyToClipboard from './copyToClipBoard.js';
 import instructions from './instructions.js';
 
 import createDropDownDegrees from './createDropDownDegrees.js';
