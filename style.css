@@ -58,7 +58,7 @@ html {
     padding: 0px 40px 13px 40px;
 }
 
-#email-signature-code {
+.email-signature-code {
     padding: 30px;
     padding-right: 13px;
 
@@ -96,7 +96,7 @@ html {
     padding: 10px 30px;
 }
 
-#sig-clipboard-success {
+.sig-clipboard-success {
     margin: 20px auto;
     color: green;
     border: 1px solid green;
@@ -318,13 +318,9 @@ input:user-invalid~.error-message {
     transition: max-height 1s ease, opacity 1s;
 }
 
-/* .sig-diabled * {
-    color: gray;
-    cursor: not-allowed;
-} */
 
-#alumni:checked~.sig-diabled,
-#opt-link-checkbox:checked~.sig-diabled {
+.alumni:checked~.sig-diabled,
+.opt-link-checkbox:checked~.sig-diabled {
     overflow: auto;
     max-height: 300px;
     opacity: 1;

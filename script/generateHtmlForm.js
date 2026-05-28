@@ -1,0 +1,319 @@
+import loadFormData from './loadFormData.js';
+import liveUpdateTemplate from './liveUpdateTemplate.js';
+import copyToClipboard from './copyToClipboard.js';
+import instructions from './instructions.js';
+import genorateInputSelect from './genorateInputSelect.js';
+
+const generateHtmlForm = (formData, defaultValues) => {
+    const id = formData.get().id;
+    const myForm = document.getElementById(id);
+    myForm.innerHTML = `
+    
+    <form id="${id}-email-sig" name="${id}-email-sig" novalidate>
+
+      <div class="email-signature">
+        <h2>Create an Official FGCU Email Signature</h2>
+        <hr />
+
+        <div class="email-block-one">
+          <div class="email-signature-inputs">
+            <div class="email-sig-padding">
+              <div class="email-sig-50">
+
+                <!-- Full Name-->
+                <div class="email-sig-input-group">
+                  <label for="${id}-fullName">* Full Name</label>
+                  <input type="text" id="${id}-fullName" name="fullName" required placeholder="John Jane Doe">
+                  <span class="sig-checkmark">&#10004;</span>
+                  <span class="error-message">This field is required.</span>
+                </div>
+
+                <!-- Title or Position -->
+                <div class="email-sig-input-group">
+                  <label for="${id}-title-or-position">* Title or Position</label>
+                  <input type="text" id="${id}-title-or-position" name="title-or-position" required
+                    placeholder="Title or Position">
+                  <span class="sig-checkmark">&#10004;</span>
+                  <span class="error-message">This field is required.</span>
+                </div>
+              </div>
+
+              <!-- I am an FGCU alumnus/alumna (optional) -->
+              <div class="email-sig-input-group sig-tight">
+                <input type="checkbox" id="${id}-alumni" class="alumni" name="alumni" placeholder="I am an FGCU alumnus/alumna (optional)">
+                <label for="${id}-alumni">I am an FGCU alumnus/alumna (optional)</label>
+
+                <div class="email-sig-50 sig-group sig-diabled">
+                  <!-- Degree -->
+                  <div class="email-sig-input-group">
+                    <label for="${id}-degree">Degree</label>
+                    <select id="${id}-degree">
+                      <option value="">None</option>
+                      <optgroup label="Specialist Degrees">
+                        <option value="Ed.S.">Educational Specialist (Ed.S.)</option>
+                        <option value="B.Acc.">Bachelor of Accountancy (B.Acc.)</option>
+                      </optgroup>
+                      <optgroup label="Associate Degrees">
+                        <option value="A.A.">Associate of Arts (A.A.)</option>
+                        <option value="A.A.S.">Associate of Applied Science (A.A.S.)</option>
+                        <option value="A.A.T.">Associate of Arts in Teaching (A.A.T.)</option>
+                        <option value="A.B.S.">Associate of Baccalaureate Studies (A.B.S.)</option>
+                        <option value="A.E.S.">Associate of Engineering Science (A.E.S.)</option>
+                        <option value="A.F.A.">Associate of Fine Arts (A.F.A.)</option>
+                        <option value="A.G.S.">Associate in General Studies (A.G.S.)</option>
+                        <option value="A.S.">Associate of Science (A.S.)</option>
+                      </optgroup>
+                      <optgroup label="Bachelor's Degrees">
+                        <option value="B.A.">Bachelor of Arts (B.A.)</option>
+                        <option value="B.B.A.">Bachelor of Business Administration (B.B.A.)</option>
+                        <option value="B.C.L.">Bachelor of Civil Law (B.C.L.)</option>
+                        <option value="B.Comm.">Bachelor of Commerce (B.Comm.)</option>
+                        <option value="B.E.">Bachelor of Engineering (B.E.)</option>
+                        <option value="B.F.A.">Bachelor of Fine Arts (B.F.A.)</option>
+                        <option value="L.L.B.">Bachelor of Laws (L.L.B.)</option>
+                        <option value="B.M.">Bachelor of Music (B.M.)</option>
+                        <option value="B.S.">Bachelor of Science (B.S.)</option>
+                      </optgroup>
+                      <optgroup label="Master's Degrees">
+                        <option value="LL.M.">Master of Laws (LL.M.)</option>
+                        <option value="M.A.">Master of Arts (M.A.)</option>
+                        <option value="M.B.A.">Master of Business Administration (M.B.A.)</option>
+                        <option value="M.Div.">Master of Divinity (M.Div.)</option>
+                        <option value="M.Ed.">Master of Education (M.Ed.)</option>
+                        <option value="M.F.A.">Master of Fine Arts (M.F.A.)</option>
+                        <option value="M.P.A.">Master of Public Administration (M.P.A.)</option>
+                        <option value="M.P.A.">Master of Public Affairs (M.P.A.)</option>
+                        <option value="M.P.M.">Master of Project Management (M.P.M.)</option>
+                        <option value="M.P.P.">Master of Public Policy (M.P.P.)</option>
+                        <option value="M.R.E.">Master of Religious Education (M.R.E.)</option>
+                        <option value="M.S.">Master of Science (M.S.)</option>
+                        <option value="M.T.S.">Master of Theological Studies (M.T.S.)</option>
+                      </optgroup>
+                      <optgroup label="Doctoral Degrees">
+                        <option value="D.A.">Doctor of Arts (D.A.)</option>
+                        <option value="D.B.A.">Doctor of Business Administration (D.B.A.)</option>
+                        <option value="D.C.L.">Doctor of Civil Law (D.C.L.)</option>
+                        <option value="D.D.">Doctor of Divinity (D.D.)</option>
+                        <option value="D.Lit">Doctor of Literature or Doctor of Letters (D.Lit. or
+                          D. Litt.)</option>
+                        <option value="D.M.A.">Doctor of Musical Arts (D.M.A.)</option>
+                        <option value="D. Mus.">Doctor of Music (D. Mus.)</option>
+                        <option value="D.N.S.">Doctorate of Nursing Science (D.N.S.)</option>
+                        <option value="D. Phil.">Doctor of Philosophy (D. Phil.)</option>
+                        <option value="D.Sc.">Doctor of Science (D.Sc.)</option>
+                        <option value="Ed.D.">Doctor of Education (Ed.D.)</option>
+                        <option value="Eng.D.">Doctor of Engineering (Eng.D.)</option>
+                        <option value="J.D.">Doctor of Law or Juris Doctor (J.D.)</option>
+                        <option value="Pharm.D.">Doctor of Pharmacy (Pharm.D.)</option>
+                        <option value="Ph.D.">Doctor of Philosophy (Ph.D.)</option>
+                        <option value="Psy.D.">Doctor of Psychology (Psy.D.)</option>
+                        <option value="Th.D.">Doctor of Theology (Th.D.)</option>
+                      </optgroup>
+                      <optgroup label="Other">
+                        <option value="other">Other</option>
+                      </optgroup>
+                    </select>
+                    <span class="sig-checkmark">&#10004;</span>
+                    <span class="error-message">This field is required.</span>
+                  </div>
+
+                  <!-- Graduation Year -->
+                  <div class="email-sig-input-group">
+                    <label for="${id}-graduation_year">Graduation Year</label>
+                        ${genorateInputSelect()}
+                    <span class="sig-checkmark">&#10004;</span>
+                    <span class="error-message">This field is required.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- College, Division or Unit -->
+              <div class="email-sig-50">
+                <div class="email-sig-input-group">
+                  <label for="${id}-division">* College, Division or Unit</label>
+                  <input type="text" id="${id}-division" name="division" required placeholder="College, Division or Unit">
+                  <span class="sig-checkmark">&#10004;</span>
+                  <span class="error-message">This field is required.</span>
+                </div>
+
+                <!-- Department or Office -->
+                <div class="email-sig-input-group">
+                  <label for="${id}-department">* Department or Office</label>
+                  <input type="text" id="${id}-department" name="department" required placeholder="Department or Office">
+                  <span class="sig-checkmark">&#10004;</span>
+                  <span class="error-message">This field is required.</span>
+                </div>
+              </div>
+
+              <!-- Your Department website URL -->
+              <div class="email-sig-input-group">
+                <label for="${id}-department-url">* Your Department website URL</label>
+                <div class="sig-prefix-group">
+                  <span class="sig-prefix">http://www.fgcu.edu/</span>
+                  <span class="sig-checkmark">&#10004;</span>
+                  <input type="text" id="${id}-department-url" name="department-url" class="input-field" required
+                    placeholder="yourDepartmentWebsite">
+                  <span class="sig-checkmark">&#10004;</span>
+                </div>
+                <span class="error-message">This field is required.</span>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="email-sig-input-group">
+                <label for="${id}-phone">Phone Number</label>
+                <input type="tel" id="${id}-phone" inputmode="numeric" maxlength="12" name="phone" required
+                  placeholder="239.000.0000" pattern="[0-9]{3}.[0-9]{3}.[0-9]{4}">
+                <span class="sig-checkmark">&#10004;</span>
+                <span class="error-message">Phone number is required</span>
+              </div>
+
+              <!-- I would like to add a link (Optional) -->
+              <div class="email-sig-input-group sig-tight">
+                <input type="checkbox" id="${id}-opt-link-checkbox" class="opt-link-checkbox" name="opt-link-checkbox"
+                  placeholder="Add an optional Link">
+                <label for="${id}-opt-link-checkbox">I would like to add a link (optional)</label>
+
+                <div class="email-sig-50 sig-group sig-diabled">
+                  <!-- Link Text - optional -->
+                  <div class="email-sig-input-group">
+                    <label for="${id}-opt-link-text">Link Text</label>
+                    <input type="text" id="${id}-opt-link-text" name="opt-link-text" placeholder="optional link text">
+                    <span class="error-message"></span>
+                  </div>
+
+                  <!-- Link URL - optional -->
+                  <div class="email-sig-input-group">
+                    <label for="${id}-Calendly">Link URL</label>
+                    <input type="text" id="${id}-opt-link-url" name="opt-link-url" placeholder="//URL">
+                    <span class="error-message"></span>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- Output - the Signature Block -->
+          <div class="email-signature-output">
+            <div id="${id}-email-signature-code" class="email-signature-code">
+              <!--  This will be replaced dynamically -->
+            </div>
+          </div>
+
+
+          <!-- Copy to clipboard button -->
+          <div class="button-box">
+            <button type="submit" id="${id}-sig-submit">Copy to clipboard</button>
+            <div id="${id}-sig-clipboard-success" class="sig-clipboard-success sig-diabled">✔&nbsp;&nbsp;Email signature has been copied to your
+              clipboard!</div>
+          </div>
+
+        </div>
+
+
+        <!-- Instructions -->
+
+
+        <div class="email-sig-instructions">
+
+          <div class="email-sig-instructions-header">
+            <h3>Instructions</h3>
+
+            <div id="${id}-pill-group" class="pill-group">
+              <p>Complete the form above. Click the "Copy to clipboard" button and then</p>
+              <p>select your operating system for specific instructions.</p>
+              <br />
+              <input type="radio" id="${id}-pill3" name="pill-options" value="opt3" checked>
+              <label for="${id}-pill3">Web Mail</label>
+
+              <input type="radio" id="${id}-pill1" name="pill-options" value="opt1">
+              <label for="${id}-pill1">Windows</label>
+
+              <input type="radio" id="${id}-pill2" name="pill-options" value="opt2">
+              <label for="${id}-pill2">Mac</label>
+
+            </div>
+
+            <hr />
+
+        </div>
+
+        ${instructions(formData)}
+    </form>
+    
+    `;
+
+    // load this inital defaults in the live preview aria
+    liveUpdateTemplate(formData);
+
+    // add event listeners to update the form data and preview
+    const eventTypes = ['click', 'mouseover', 'focus', 'focusout', 'keyup'];
+    eventTypes.forEach(type => {
+        myForm.addEventListener(type, (event) => {
+            loadFormData(formData, defaultValues);
+            liveUpdateTemplate(formData);
+        });
+    });
+
+    // submit button listener
+    myForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        copyToClipboard(formData);
+    })
+
+    // phone field event listeners
+    let phoneInput = document.getElementById(id+'-phone');
+    phoneInput.addEventListener('input', (e) => {
+        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+        e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + (x[3] ? '.' + x[3] : '')
+    });
+
+
+
+    // instructions event listenters
+    let instructionsButtons = document.getElementById(id+'-pill-group');
+    console.log(instructionsButtons)
+
+    instructionsButtons.addEventListener('click', (e) => {
+        let pill1 = document.getElementById(id+'-pill1');
+        let pill2 = document.getElementById(id+'-pill2');
+        let pill3 = document.getElementById(id+'-pill3');
+
+        let win = document.getElementById(id+'-email-sig-win');
+        let mac = document.getElementById(id+'-email-sig-mac');
+        let web = document.getElementById(id+'-email-sig-web');
+
+
+        console.log(pill1)
+
+
+        pill1.addEventListener('input', (e) => {
+            console.log('pill1')
+            win.classList.remove('sig-hidden')
+            mac.classList.add('sig-hidden')
+            web.classList.add('sig-hidden')
+        });
+
+        pill2.addEventListener('input', (e) => {
+            console.log('pill2')
+            win.classList.add('sig-hidden')
+            mac.classList.remove('sig-hidden')
+            web.classList.add('sig-hidden')
+        });
+
+        pill3.addEventListener('input', (e) => {
+            console.log('pill3')
+            win.classList.add('sig-hidden')
+            mac.classList.add('sig-hidden')
+            web.classList.remove('sig-hidden')
+        });
+
+    });
+
+
+}
+
+export default generateHtmlForm;
