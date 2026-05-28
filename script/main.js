@@ -1,4 +1,4 @@
-import App from '../script/app.js';
+import App from './app.js';
 
 // onLoad because the js source is non blocking
 window.onload = () => {
