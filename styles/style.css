@@ -52,7 +52,7 @@
 .fsgu-email-sig .email-signature-code {
     padding: 30px;
     padding-right: 13px;
-
+    min-height: 285px;
 }
 
 .fsgu-email-sig .email-signature-inputs {
