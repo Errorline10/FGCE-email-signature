@@ -7,12 +7,70 @@
   <title>Create FGCU Email Signature</title>
 
 
+  <style>
+    /* 1. Define the animation keyframes */
+    @keyframes onAutoFillStart {
+      from {}
+
+      to {}
+    }
+
+    @keyframes onAutoFillCancel {
+      from {}
+
+      to {}
+    }
+
+    /* 2. Apply the slow transition to override default browser styles */
+    input:-webkit-autofill {
+      animation-name: onAutoFillStart;
+      transition: background-color 50000s ease-in-out 0s;
+    }
+
+    input:not(:-webkit-autofill) {
+      animation-name: onAutoFillCancel;
+    }
+
+    /* 3. Your custom input styles go here */
+    input.my-custom-input {
+      background-color: white;
+      color: #333;
+    }
+  </style>
+
+  <script>
+    window.setTimeout(() => {
+      // listening for Autocompleate
+      console.log('listening for Autocompleate')
+      document.addEventListener('animationstart', function (event) {
+        if (event.animationName === 'onAutoFillStart') {
+          //event.preventDefault(); 
+          //const autocompleteInput = document.getElementById('my-autocomplete-input');
+
+          //let el = document.getElementById(event.target)
+          //console.log(el)
+
+          console.log('Autofill started');
+          console.log(event)
+          
+
+          // Note: Chrome may still restrict reading .value here
+          // Force focus/input handling if you need to access values immediately
+        } else if (event.animationName === 'onAutoFillCancel') {
+          console.log('Autofill canceled');
+        }
+      });
+    }, 1000);
+  </script>
+
+
 </head>
 
 <body>
 
   <!-- Just add the script and the target div -->
-  <script type="module" id="FGCU-email-sgnature-module" data-target-div="FGCUEmailSignature" src="./script/main.js"></script>
+  <script type="module" id="FGCU-email-sgnature-module" data-target-div="FGCUEmailSignature" src="./script/main.js">
+  </script>
   <div id="FGCUEmailSignature"></div>
 
 

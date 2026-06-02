@@ -16,7 +16,7 @@ const EmailSignatureApp = () => {
     'graduation_year': '17',
     'division': 'College, Division or Unit',
     'department': 'Department or Office',
-    'department-url': 'yourdepartmentwebsite',
+    'department-url': 'http://www.fgcu.edu/yourdepartmentwebsite',
     'phone': '239.000.0000',
     'opt-link-checkbox': false,
     'opt-link-text': '',

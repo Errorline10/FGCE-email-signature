@@ -14,4 +14,5 @@ window.onload = () => {
     // initilize the email signature form
     const script = document.getElementById('FGCU-email-sgnature-module');
     App.init(script.dataset.targetDiv);
+
 };

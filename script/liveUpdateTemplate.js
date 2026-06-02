@@ -8,7 +8,7 @@ document.getElementById(id+'-email-signature-code').innerHTML = `
     <strong>${formData.get().fullName}${formData.get().alumni == true ? ', ’'+formData.get().graduation_year+' '+ formData.get().degree:''}</strong> | <em>
     ${formData["title-or-position"]}</em><br>
     <strong>${formData.get().division}</strong> | <em>${formData.get().department}</em><br>
-    <a href="https://www.fgcu.edu" style="color:#0072ce; text-decoration:none;">http://www.fgcu/${formData["department-url"]}</a>
+    <a href="https://www.fgcu.edu" style="color:#0072ce; text-decoration:none;">${formData["department-url"].split('//www.')[1]}</a>
   </td></tr>
   <tr><td style="padding:10px 0;">
     <img src="https://www.fgcu.edu/homefiles/images/email-signature-logo.png" alt="FGCU Logo" width="160" height="68px" style="display:block; border:0;">

@@ -7,9 +7,9 @@ import createDropDownDegrees from './createDropDownDegrees.js';
 import createDropDownYears from './createDropDownYears.js';
 
 const generateHtmlForm = (formData, defaultValues) => {
-    const id = formData.get().id;
-    const myForm = document.getElementById(id);
-    myForm.innerHTML = `
+  const id = formData.get().id;
+  const myForm = document.getElementById(id);
+  myForm.innerHTML = `
     
     <form id="${id}-email-sig" name="${id}-email-sig" novalidate>
 
@@ -24,7 +24,7 @@ const generateHtmlForm = (formData, defaultValues) => {
 
                 <!-- Full Name-->
                 <div class="sig-input-group">
-                  <label for="${id}-fullName">* Full Name</label>
+                  <label autocomplete="name" for="${id}-fullName">* Full Name</label>
                   <input type="text" id="${id}-fullName" name="fullName" required placeholder="John Jane Doe">
                   <span class="sig-checkmark">&#10004;</span>
                   <span class="error-message">This field is required.</span>
@@ -85,20 +85,17 @@ const generateHtmlForm = (formData, defaultValues) => {
               <!-- Your Department website URL -->
               <div class="sig-input-group">
                 <label for="${id}-department-url">* Your Department website URL</label>
-                <div class="sig-prefix-group">
-                  <span class="sig-prefix">http://www.fgcu.edu/</span>
                   <span class="sig-checkmark">&#10004;</span>
                   <input type="text" id="${id}-department-url" name="department-url" class="input-field" required
-                    placeholder="yourDepartmentWebsite">
+                    placeholder="http://www.fgcu.edu/yourdepartmentwebsite">
                   <span class="sig-checkmark">&#10004;</span>
-                </div>
                 <span class="error-message">This field is required.</span>
               </div>
 
               <!-- Phone Number -->
               <div class="sig-input-group">
                 <label for="${id}-phone">Phone Number</label>
-                <input type="tel" id="${id}-phone" inputmode="numeric" maxlength="12" name="phone" required
+                <input autocomplete="tel" type="tel" id="${id}-phone" inputmode="numeric" maxlength="12" name="phone" required
                   placeholder="239.000.0000" pattern="[0-9]{3}.[0-9]{3}.[0-9]{4}">
                 <span class="sig-checkmark">&#10004;</span>
                 <span class="error-message">Phone number is required</span>
@@ -148,11 +145,17 @@ const generateHtmlForm = (formData, defaultValues) => {
           </div>
         </div>
 
+        <!-- warning -->
+        <div class="sig-warning">
+          <span><strong>Do not modify the signature</strong></span>
+          <span>FGCU's email signature policy (<a href="https://www.fire.org/sites/default/files/2023/06/2022policy_email.pdf">Policy 3.021</a>) requires all faculty and staff to use a unified, branded signature that includes the university web address.</span>
+          <span>The policy strictly prohibits: personal statements, messages, spiritual, political, philosophical, religious, poetic quotes, personal images, logos, links to social media / professional associations.</span>
+        </div>
 
         <!-- Instructions -->
         <div class="sig-instructions">
           <div class="sig-instructions-header">
-            <h3>Instructions</h3>
+          <h3>Instructions</h3>
 
             <div id="${id}-pill-group" class="pill-group">
               <p>Complete the form above. Click the "Copy to clipboard" button and then</p>
@@ -163,6 +166,9 @@ const generateHtmlForm = (formData, defaultValues) => {
 
               <input type="radio" id="${id}-pill1" name="pill-options" value="opt1">
               <label for="${id}-pill1">Windows</label>
+
+              <input type="radio" id="${id}-pill4" name="pill-options" value="opt4">
+              <label for="${id}-pill4">Windows (Classic)</label>
 
               <input type="radio" id="${id}-pill2" name="pill-options" value="opt2">
               <label for="${id}-pill2">Mac</label>
@@ -178,72 +184,81 @@ const generateHtmlForm = (formData, defaultValues) => {
     
     `;
 
-    // load this inital defaults in the live preview aria
-    liveUpdateTemplate(formData);
+  // load this inital defaults in the live preview aria
+  liveUpdateTemplate(formData);
 
-    // add event listeners to update the form data and preview
-    const eventTypes = ['click', 'mouseover', 'focus', 'focusout', 'keyup'];
-    eventTypes.forEach(type => {
-        myForm.addEventListener(type, (event) => {
-            loadFormData(formData, defaultValues);
-            liveUpdateTemplate(formData);
-        });
+  // add event listeners to update the form data and preview
+  const eventTypes = ['click', 'mouseover', 'focus', 'focusout', 'keyup'];
+  eventTypes.forEach(type => {
+    myForm.addEventListener(type, (event) => {
+      loadFormData(formData, defaultValues);
+      liveUpdateTemplate(formData);
+    });
+  });
+
+  // submit button listener
+  myForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    copyToClipboard(formData);
+  })
+
+  // phone field event listeners
+  let phoneInput = document.getElementById(id + '-phone');
+  phoneInput.addEventListener('input', (e) => {
+    let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+    e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + (x[3] ? '.' + x[3] : '')
+  });
+
+
+
+  // instructions event listenters
+  let instructionsButtons = document.getElementById(id + '-pill-group');
+  console.log(instructionsButtons)
+
+  instructionsButtons.addEventListener('click', (e) => {
+    let pill1 = document.getElementById(id + '-pill1');
+    let pill2 = document.getElementById(id + '-pill2');
+    let pill3 = document.getElementById(id + '-pill3');
+    let pill4 = document.getElementById(id + '-pill4');
+
+    let winOld = document.getElementById(id + '-sig-win-old');
+    let win = document.getElementById(id + '-sig-win');
+    let mac = document.getElementById(id + '-sig-mac');
+    let web = document.getElementById(id + '-sig-web');
+
+
+    pill1.addEventListener('input', (e) => {
+      winOld.classList.add('sig-hidden')
+      win.classList.remove('sig-hidden')
+      mac.classList.add('sig-hidden')
+      web.classList.add('sig-hidden')
     });
 
-    // submit button listener
-    myForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        copyToClipboard(formData);
-    })
+    pill2.addEventListener('input', (e) => {
+      winOld.classList.add('sig-hidden')
+      win.classList.add('sig-hidden')
+      mac.classList.remove('sig-hidden')
+      web.classList.add('sig-hidden')
+    });
 
-    // phone field event listeners
-    let phoneInput = document.getElementById(id+'-phone');
-    phoneInput.addEventListener('input', (e) => {
-        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-        e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + (x[3] ? '.' + x[3] : '')
+    pill3.addEventListener('input', (e) => {
+      winOld.classList.add('sig-hidden')
+      win.classList.add('sig-hidden')
+      mac.classList.add('sig-hidden')
+      web.classList.remove('sig-hidden')
+    });
+
+    pill4.addEventListener('input', (e) => {
+      winOld.classList.remove('sig-hidden')
+      win.classList.add('sig-hidden')
+      mac.classList.add('sig-hidden')
+      web.classList.add('sig-hidden')
     });
 
 
 
-    // instructions event listenters
-    let instructionsButtons = document.getElementById(id+'-pill-group');
-    console.log(instructionsButtons)
 
-    instructionsButtons.addEventListener('click', (e) => {
-        let pill1 = document.getElementById(id+'-pill1');
-        let pill2 = document.getElementById(id+'-pill2');
-        let pill3 = document.getElementById(id+'-pill3');
-
-        let win = document.getElementById(id+'-sig-win');
-        let mac = document.getElementById(id+'-sig-mac');
-        let web = document.getElementById(id+'-sig-web');
-
-
-        console.log(pill1)
-
-
-        pill1.addEventListener('input', (e) => {
-            console.log('pill1')
-            win.classList.remove('sig-hidden')
-            mac.classList.add('sig-hidden')
-            web.classList.add('sig-hidden')
-        });
-
-        pill2.addEventListener('input', (e) => {
-            console.log('pill2')
-            win.classList.add('sig-hidden')
-            mac.classList.remove('sig-hidden')
-            web.classList.add('sig-hidden')
-        });
-
-        pill3.addEventListener('input', (e) => {
-            console.log('pill3')
-            win.classList.add('sig-hidden')
-            mac.classList.add('sig-hidden')
-            web.classList.remove('sig-hidden')
-        });
-
-    });
+  });
 
 
 }

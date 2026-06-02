@@ -76,17 +76,41 @@
 /* Form Input field styles */
 /* ____________________________________ */
 
+
 .fsgu-email-sig .button-box {
     display: inline-block;
     margin: auto auto;
     min-width: 400px;
     text-align: center;
     margin-top: 20px;
+
 }
 
 .fsgu-email-sig button {
-    padding: 10px 30px;
+    font-family: 'rig-sans', arial;
+    font-size: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 40px;
+    border: 0px solid white;
+    text-transform: uppercase;
+    padding: 15px 22px 12px 22px;
+    display: inline-block;
+    text-align: center;
+    max-width: 272px;
+    text-decoration: none !important;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 7px;
+    margin-right: 7px;
+    background-color: #00794c;
+    color: #fff;
 }
+
+.fsgu-email-sig button:hover {
+    background-color:#004785;
+}
+
 
 .fsgu-email-sig .sig-clipboard-success {
     margin: 20px auto;
@@ -159,7 +183,7 @@
     width: 92%;
 }
 
-.fsgu-email-sig .sig-prefix-group {
+/* .fsgu-email-sig .sig-prefix-group {
     position: relative;
 }
 
@@ -184,7 +208,7 @@
     background-color: #eee;
     padding: 10px 5px 10px 10px;
     text-align: right;
-}
+} */
 
 
 .fsgu-email-sig .sig-input-group input[type="checkbox"] {
@@ -304,6 +328,22 @@ input:user-invalid~.error-message {
     transition: max-height 1s ease, opacity 1s;
 }
 
+
+
+
+/* Warning Section */
+/* ____________________________________ */
+
+.sig-warning{
+    border-top: 1px solid black;
+    margin: 0px;
+    background-color: rgb(252, 252, 255);
+    padding: 40px;
+}
+.sig-warning span{
+    display: block;
+    padding: 10px;
+}
 
 /* Instructions Section */
 /* ____________________________________ */
