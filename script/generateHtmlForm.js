@@ -20,8 +20,16 @@ const generateHtmlForm = (formData, defaultValues) => {
         <div class="fsgu-sig">
           <div class="email-signature-inputs">
             <div class="sig-padding">
-              <div class="sig-50">
 
+              <!-- I am the athletic depertment -->
+              <div class="sig-input-group sig-tight">
+                <input type="checkbox" id="${id}-athletic" class="athletic" name="athletic" placeholder="I am the athletic depertment">
+                <label for="${id}-athletic">I am the athletic depertment</label>
+              </div>
+
+
+            <div class="sig-50">
+              
                 <!-- Full Name-->
                 <div class="sig-input-group">
                   <label autocomplete="name" for="${id}-fullName">* Full Name</label>
@@ -192,7 +200,7 @@ const generateHtmlForm = (formData, defaultValues) => {
   eventTypes.forEach(type => {
     myForm.addEventListener(type, (event) => {
       loadFormData(formData, defaultValues);
-      liveUpdateTemplate(formData);
+      liveUpdateTemplate(formData);    
     });
   });
 

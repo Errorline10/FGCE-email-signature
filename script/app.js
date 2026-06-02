@@ -9,6 +9,7 @@ const EmailSignatureApp = () => {
 
   let formData = {
     'id': '',
+    'athletic': false,
     'fullName': 'John Jane Doe ',
     'title-or-position': 'Title or Position',
     'alumni': false,
@@ -31,18 +32,21 @@ const EmailSignatureApp = () => {
 
   // make a copy before the user input for default values
   // note: this will silently strip out the functions
-  let defaultValues = structuredClone(JSON.parse(JSON.stringify(formData)));  
+  let defaultValues = structuredClone(JSON.parse(JSON.stringify(formData)));
 
 
   //                                                   __________
   // _________________________________________________/   Init   \____________ 
   function Init(id) {
 
-    formData.set('id',id);
+    formData.set('id', id);
 
     // Test to see if the target div is valid
     const myForm = document.querySelector("#" + formData.get().id);
-    if (!myForm) { console.log('the form was not found.'); return; } 
+    if (!myForm) {
+      console.log('the form was not found.');
+      return;
+    }
 
     // write out the Form template
     generateHtmlForm(formData, defaultValues);
@@ -55,4 +59,3 @@ const EmailSignatureApp = () => {
 };
 
 export default EmailSignatureApp();
-
