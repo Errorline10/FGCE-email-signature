@@ -23,8 +23,8 @@ const generateHtmlForm = (formData, defaultValues) => {
 
               <!-- I am the athletic depertment -->
               <div class="sig-input-group sig-tight">
-                <input type="checkbox" id="${id}-athletic" class="athletic" name="athletic" placeholder="I am the athletic depertment">
-                <label for="${id}-athletic">I am the athletic depertment</label>
+                <input type="checkbox" id="${id}-athletic" class="athletic" name="athletic" placeholder="I am a member of the athletic depertment">
+                <label for="${id}-athletic">I am a member of the athletic depertment</label>
               </div>
 
 
@@ -102,9 +102,9 @@ const generateHtmlForm = (formData, defaultValues) => {
 
               <!-- Phone Number -->
               <div class="sig-input-group">
-                <label for="${id}-phone">Phone Number</label>
-                <input autocomplete="tel" type="tel" id="${id}-phone" inputmode="numeric" maxlength="12" name="phone" required
-                  placeholder="239.000.0000" pattern="[0-9]{3}.[0-9]{3}.[0-9]{4}">
+              <label for="${id}-phone">Phone Number</label>
+                <input autocomplete="tel-national" type="tel-area-code" id="${id}-phone" inputmode="numeric" maxlength="12" name="phone" required placeholder="239.000.0000" pattern="[0-9]{3}.[0-9]{3}.[0-9]{4}">
+
                 <span class="sig-checkmark">&#10004;</span>
                 <span class="error-message">Phone number is required</span>
               </div>
@@ -173,7 +173,7 @@ const generateHtmlForm = (formData, defaultValues) => {
               <label for="${id}-pill3">Web Mail</label>
 
               <input type="radio" id="${id}-pill1" name="pill-options" value="opt1">
-              <label for="${id}-pill1">Windows</label>
+              <label for="${id}-pill1">Windows (Mail App)</label>
 
               <input type="radio" id="${id}-pill4" name="pill-options" value="opt4">
               <label for="${id}-pill4">Windows (Classic)</label>
