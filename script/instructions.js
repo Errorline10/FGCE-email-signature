@@ -7,7 +7,7 @@ return `
 <div id="${id}-sig-win-old" class="sig-hidden">
   <h4>Windows: How to paste your custom signature block into Microsoft Outlook.</h4>
   <UL>
-    <li><span>Open Outlook and click on the <strong>envelope</strong> Icon, and then the "<strong>File</strong>" menu. (On the top tool bar).</span>
+    <li><span>Open Outlook and click on the envelope icon and then the File menu (on the top tool bar). Then open Settings.</span>
       <img alt="Open Outlook and Click File" src="./images/instructions/windows-old/sig-email-instructions-windows-old-1.png">
     </li>
     <li><Span>On the bottom left, click "<strong>Options</strong>"</Span>
@@ -46,14 +46,11 @@ return `
       <img alt="Open Outlook and Click File" src="./images/instructions/windows/sig-email-instructions-windows-1.png">
     </li>
     <li>
-      <Span>In the settings window, Select "<strong>Account</strong>" on the left side.</Span>
-      <Span>Then click on "Signatures" on sub menu.</Span>
-      <span>In the signatures window, click  <strong>[ + Add signature ]</strong> on the right.</span>
+      <Span>In the Settings window, select Account on the left side. Then click on Signatures in the sub menu. In the Signatures window, click Add Signature on the right.</span>
       <img alt="click Options" src="./images/instructions/windows/sig-email-instructions-windows-2.png">
     </li>
     <li>
-      <Span>Name the new signature <strong>"FGCU-Signature"</strong></Span>
-      <Span>Paste in the signature block from above, and click the "Save" Button.</Span>
+      <Span>Name the new signature FGCU-Signature and paste in the signature block from above. Click Save.</Span>
       <img alt="click the Signatures button" src="./images/instructions/windows/sig-email-instructions-windows-3.png">
     </li>
     <li>
@@ -97,17 +94,14 @@ return `
   <h4>Web Mail: How to paste your custom signature block into Microsoft Outlook Web Mail.</h4>
   <UL>
     <li>
-      <span>Use this Link to open Outlook WebMail in a new Tab.</span>
+      <span>Use this link to open Outlook WebMail in a new tab.</span>
       <span><a href="https://outlook.cloud.microsoft/mail/options/accounts-category/signatures-subcategory"
           target="_blank">WebMail.FGCU.edu</a></span>
       <img alt="Outlook WebMail" src="./images/instructions/web/sig-email-instructions-web-1.png"></li>
     </span>
     </li>
     <li>
-      <span>Click "+Add signature"</span>
-      <span>Fill in the Name as "FGCU-Signature"</span>
-      <span>Paste the signature into the box and click save.</span>
-
+      <span>Click “+Add signature,” fill in the name as “FGCU-Signature” and paste the signature into the box. Click save.</span>
       <img alt="Paste the signature" src="./images/instructions/web/sig-email-instructions-web-2.png">
     </li>
 

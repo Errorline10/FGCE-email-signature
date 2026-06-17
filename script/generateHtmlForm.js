@@ -21,10 +21,10 @@ const generateHtmlForm = (formData, defaultValues) => {
           <div class="email-signature-inputs">
             <div class="sig-padding">
 
-              <!-- I am the athletic depertment -->
+              <!-- I am a member of the FGCU Athletics department. -->
               <div class="sig-input-group sig-tight">
-                <input type="checkbox" id="${id}-athletic" class="athletic" name="athletic" placeholder="I am a member of the athletic depertment">
-                <label for="${id}-athletic">I am a member of the athletic depertment</label>
+                <input type="checkbox" id="${id}-athletic" class="athletic" name="athletic" placeholder="I am a member of the FGCU Athletics department.">
+                <label for="${id}-athletic">I am a member of the FGCU Athletics department.</label>
               </div>
 
 
@@ -48,10 +48,10 @@ const generateHtmlForm = (formData, defaultValues) => {
                 </div>
               </div>
 
-              <!-- I am an FGCU alumnus/alumna (optional) -->
+              <!-- I am an FGCU graduate. -->
               <div class="sig-input-group sig-tight">
-                <input type="checkbox" id="${id}-alumni" class="alumni" name="alumni" placeholder="I am an FGCU alumnus/alumna (optional)">
-                <label for="${id}-alumni">I am an FGCU alumnus/alumna (optional)</label>
+                <input type="checkbox" id="${id}-alumni" class="alumni" name="alumni" placeholder="I am an FGCU graduate.">
+                <label for="${id}-alumni">I am an FGCU graduate.</label>
 
                 <div class="sig-50 sig-group sig-diabled">
                   <!-- Degree -->
@@ -90,9 +90,9 @@ const generateHtmlForm = (formData, defaultValues) => {
                 </div>
               </div>
 
-              <!-- Your Department website URL -->
+              <!-- Department Website URL -->
               <div class="sig-input-group">
-                <label for="${id}-department-url">* Your Department website URL</label>
+                <label for="${id}-department-url">* Department Website URLL</label>
                   <span class="sig-checkmark">&#10004;</span>
                   <input type="text" id="${id}-department-url" name="department-url" class="input-field" required
                     placeholder="http://www.fgcu.edu/yourdepartmentwebsite">
@@ -156,8 +156,8 @@ const generateHtmlForm = (formData, defaultValues) => {
         <!-- warning -->
         <div class="sig-warning">
           <span><strong>Do not modify the signature</strong></span>
-          <span>FGCU's email signature policy (<a href="https://www.fire.org/sites/default/files/2023/06/2022policy_email.pdf">Policy 3.021</a>) requires all faculty and staff to use a unified, branded signature that includes the university web address.</span>
-          <span>The policy strictly prohibits: personal statements, messages, spiritual, political, philosophical, religious, poetic quotes, personal images, logos, links to social media / professional associations.</span>
+          <span>FGCU&apos;s email signature policy (<a href="https://www.fire.org/sites/default/files/2023/06/2022policy_email.pdf">Policy 3.021</a>) requires all faculty and staff to use a unified, branded signature that includes the university web address.</span>
+          <span>The policy strictly prohibits: personal statements and messages; spiritual, political, philosophical religious, and poetic quotes; personal images, logos amd links to social media / professional associations.</span>
         </div>
 
         <!-- Instructions -->
@@ -166,7 +166,7 @@ const generateHtmlForm = (formData, defaultValues) => {
           <h3>Instructions</h3>
 
             <div id="${id}-pill-group" class="pill-group">
-              <p>Complete the form above. Click the "Copy to clipboard" button and then</p>
+              <p>Complete the form above. Click the Copy to clipboard button and then</p>
               <p>select your operating system for specific instructions.</p>
               <br />
               <input type="radio" id="${id}-pill3" name="pill-options" value="opt3" checked>

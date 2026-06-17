@@ -11,7 +11,7 @@ document.getElementById(id+'-email-signature-code').innerHTML = `
     <a href="https://www.fgcu.edu" style="color:#0072ce; text-decoration:none;">${formData["department-url"].split('//www.')[1]}</a>
   </td></tr>
   <tr><td style="padding:10px 0;">
-    <img src="https://www.fgcu.edu/homefiles/images/email-signature-logo.png" alt="FGCU Logo" width="160" height="68px" style="display:block; border:0;">
+    <img src="https://fgcucdn.fgcu.edu/_resources/images/email-signature/email-signature-logo.png" alt="FGCU Logo" width="160" height="68px" style="display:block; border:0;">
   </td></tr>
   <tr><td style="padding:0;">
     <strong>Florida Gulf Coast University</strong>
