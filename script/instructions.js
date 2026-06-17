@@ -80,6 +80,10 @@ return `
       <img alt="" src="./images/instructions/mac/sig-email-instructions-mac-3.png">
     </li>
     <li>
+      <span>Under set default signature, select FGCU-signature</span>
+      <img alt="" src="./images/instructions/mac/sig-email-instructions-mac-4.png">
+    </li>
+    <li>
       <span>Congratulations! You now have an official FGCU email signature.</span>
     </li>
   </UL>
