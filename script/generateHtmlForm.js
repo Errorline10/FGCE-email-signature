@@ -92,7 +92,7 @@ const generateHtmlForm = (formData, defaultValues) => {
 
               <!-- Department Website URL -->
               <div class="sig-input-group">
-                <label for="${id}-department-url">* Department Website URLL</label>
+                <label for="${id}-department-url">* Department Website URL</label>
                   <span class="sig-checkmark">&#10004;</span>
                   <input type="text" id="${id}-department-url" name="department-url" class="input-field" required
                     placeholder="http://www.fgcu.edu/yourdepartmentwebsite">

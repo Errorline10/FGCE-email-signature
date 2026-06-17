@@ -2,13 +2,28 @@
 const liveUpdateTemplate = (formData)=>{
   const id = formData.get().get().id;
 
+  const formatLink = (f)=>{
+    
+    f = f.replace("https://", ""); 
+    f = f.replace("http://", ""); 
+    f = f.replace("www.", ""); 
+    f = f.replace("fgcu.edu/", ""); 
+    f = f.replace("fgcu.edu", ""); 
+    f = f.replace("//www", ""); 
+    f = f.replace("//", ""); 
+
+    f = f.replace(/^\//, "");
+
+    return `https://www.fgcu.edu/${f}`;
+  }
+
 document.getElementById(id+'-email-signature-code').innerHTML = `        
 <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size:13px; color:#000; line-height:1.4;">
   <tr><td style="padding:0;">
     <strong>${formData.get().fullName}${formData.get().alumni == true ? ', ’'+formData.get().graduation_year+' '+ formData.get().degree:''}</strong> | <em>
     ${formData["title-or-position"]}</em><br>
     <strong>${formData.get().division}</strong> | <em>${formData.get().department}</em><br>
-    <a href="https://www.fgcu.edu" style="color:#0072ce; text-decoration:none;">${formData["department-url"].split('//www.')[1]}</a>
+    <a href="${formatLink(formData["department-url"])}" style="color:#0072ce; text-decoration:none;">${formData["department-url"].split('//www.')[1] || formData["department-url"]}</a>
   </td></tr>
   <tr><td style="padding:10px 0;">
     <img src="https://fgcucdn.fgcu.edu/_resources/images/email-signature/email-signature-logo.png" alt="FGCU Logo" width="160" height="68px" style="display:block; border:0;">
