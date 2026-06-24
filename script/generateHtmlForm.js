@@ -157,7 +157,7 @@ const generateHtmlForm = (formData, defaultValues) => {
         <div class="sig-warning">
           <span><strong>Do not modify the signature</strong></span>
           <span>FGCU&apos;s email signature policy (<a href="https://www.fire.org/sites/default/files/2023/06/2022policy_email.pdf">Policy 3.021</a>) requires all faculty and staff to use a unified, branded signature that includes the university web address.</span>
-          <span>The policy strictly prohibits: personal statements and messages; spiritual, political, philosophical religious, and poetic quotes; personal images, logos amd links to social media / professional associations.</span>
+          <span>The policy strictly prohibits: personal statements and messages; spiritual, political, philosophical, religious and poetic quotes; personal images, logos and links to social media/professional associations.</span>
         </div>
 
         <!-- Instructions -->
