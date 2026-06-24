@@ -337,7 +337,6 @@ input:user-invalid~.error-message {
 .sig-warning{
     border-top: 1px solid black;
     margin: 0px;
-    background-color: rgb(252, 252, 255);
     padding: 40px;
 }
 .sig-warning span{
