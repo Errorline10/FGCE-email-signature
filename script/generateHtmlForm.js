@@ -166,8 +166,7 @@ const generateHtmlForm = (formData, defaultValues) => {
           <h3>Instructions</h3>
 
             <div id="${id}-pill-group" class="pill-group">
-              <p>Complete the form above. Click the Copy to clipboard button and then</p>
-              <p>select your operating system for specific instructions.</p>
+              <p>Complete the form above. Click the copy to clipboard button and then select your operating system for specific instructions.</p>
               <br />
               <input type="radio" id="${id}-pill3" name="pill-options" value="opt3" checked>
               <label for="${id}-pill3">Web Mail</label>
