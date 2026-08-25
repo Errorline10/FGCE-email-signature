@@ -1,4 +1,6 @@
 
+import updatePreviewDom from './updatePreviewDom.js';
+
 const liveUpdateTemplate = (formData)=>{
   const id = formData.get().get().id;
 
@@ -17,7 +19,8 @@ const liveUpdateTemplate = (formData)=>{
     return `https://www.fgcu.edu/${f}`;
   }
 
-document.getElementById(id+'-email-signature-code').innerHTML = `        
+const preview = document.getElementById(id+'-email-signature-code');
+const html = `
 <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size:13px; color:#000; line-height:1.4;">
   <tr><td style="padding:0;">
     <strong>${formData.get().fullName}${formData.get().alumni == true ? ', ’'+formData.get().graduation_year+' '+ formData.get().degree:''}</strong> | <em>
@@ -63,7 +66,9 @@ document.getElementById(id+'-email-signature-code').innerHTML = `
 </tr></table>
 </td></tr>
 </table>
-`
+`;
+
+updatePreviewDom(preview, html);
 }
 
 export default liveUpdateTemplate;

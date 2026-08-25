@@ -194,12 +194,13 @@ const generateHtmlForm = (formData, defaultValues) => {
   // load this inital defaults in the live preview aria
   liveUpdateTemplate(formData);
 
-  // add event listeners to update the form data and preview
-  const eventTypes = ['click', 'mouseover', 'focus', 'focusout', 'keyup'];
+  // Update the preview only when a form control changes the stored data.
+  const eventTypes = ['input', 'change'];
   eventTypes.forEach(type => {
-    myForm.addEventListener(type, (event) => {
-      loadFormData(formData, defaultValues);
-      liveUpdateTemplate(formData);    
+    myForm.addEventListener(type, () => {
+      if (loadFormData(formData, defaultValues)) {
+        liveUpdateTemplate(formData);
+      }
     });
   });
 

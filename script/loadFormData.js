@@ -3,10 +3,11 @@
 
   const LoadFormData = (formData, defaultValues) => {
     const id = formData.get().get().id;
+    let hasChanged = false;
 
       if (!id) {
           console.log('form Id was not initilized.');
-          return
+          return false;
       }
 
       Object.entries(formData.get()).forEach(([key, value]) => {
@@ -14,17 +15,21 @@
           if (el !== null) {
 
               if (el.type === 'checkbox') {
-                  formData.set(key, el.checked);
-              } else {
-                  if (el.value.length > 0) {
-                      formData.set(key, el.value);
-                  } else {
-                      formData.set(key, defaultValues[key]);
+                  if (value !== el.checked) {
+                      formData.set(key, el.checked);
+                      hasChanged = true;
                   }
-
+              } else {
+                  const nextValue = el.value.length > 0 ? el.value : defaultValues[key];
+                  if (value !== nextValue) {
+                      formData.set(key, nextValue);
+                      hasChanged = true;
+                  }
               }
           }
       });
+
+      return hasChanged;
   }
 
   export default LoadFormData;
