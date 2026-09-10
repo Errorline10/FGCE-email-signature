@@ -56,7 +56,7 @@ const html = `
     </a>
   </td>
   <td style="padding-right:5px;">
-    <a href="https://twitter.com/fgcu"><img src="https://www.fgcu.edu/homefiles/images/x_twitter_blue.svg" width="30" alt="X" style="display:block; border:0;"></a>
+    <a href="https://twitter.com/fgcu"><img src="https://www.fgcu.edu/homefiles/images/x_twitter_blue.svg" width="42" alt="X" style="display:block; border:0;"></a>
   </td>
   <td>
     <a href="https://www.instagram.com/fgcu/">
