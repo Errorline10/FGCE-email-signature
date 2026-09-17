@@ -167,7 +167,7 @@ const generateHtmlForm = (formData, defaultValues) => {
 
             <aside class="sig-setup-notice" aria-labelledby="${id}-setup-notice-title">
               <h4 id="${id}-setup-notice-title">Use webmail and the desktop app? Set up both.</h4>
-              <p>Set up your signature in Outlook Web Mail and in the Outlook app on your Windows or Mac computer. Updating it in one place may not update the other. Follow the instructions below for each version you use, and check that your signature appears when you compose a new email in each.</p>
+              <p>Set up your signature in Outlook Web Mail and in the Outlook app on your Windows or Mac computer. Updating it in one place may not update the other. Follow the instructions below for each version you use and check that your signature appears when you compose a new email in each.</p>
             </aside>
 
             <div id="${id}-pill-group" class="pill-group">
